@@ -1,0 +1,41 @@
+{
+	"name": "bless-storage",
+	"version": "1.0.0",
+	"description": "Javy typescript template for the Blockless CLI.",
+	"main": "index.js",
+	"scripts": {
+		"clean": "rm -rf build",
+		"build:release": "mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f release.wasm",
+		"build:debug": "mkdirp ./build && bls-sdk-ts build ./index.ts -o ./build -f debug.wasm",
+		"invoke": "bls-runtime ./build/template_name.wasm"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/blocklessnetwork/template-javy-typescript-hello-world.git"
+	},
+	"author": "Blockless",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/blocklessnetwork/template-javy-typescript-hello-world/issues"
+	},
+	"homepage": "https://github.com/blocklessnetwork/template-javy-typescript-hello-world#readme",
+	"dependencies": {
+		"@blockless/sdk-ts": "^1.0.5",
+		"axios": "^1.9.0",
+		"mkdirp": "^3.0.1",
+		"readline-sync": "^1.4.10"
+	},
+	"bls": {
+		"functionId": "bless-function_bless-storage-1.0.0"
+	},
+	"devDependencies": {
+		"@types/webassembly-js-api": "^0.0.3",
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.3",
+		"tailwindcss": "^4.1.7"
+	},
+	"directories": {
+		"test": "test"
+	},
+	"keywords": []
+}

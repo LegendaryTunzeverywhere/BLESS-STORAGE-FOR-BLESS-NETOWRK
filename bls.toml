@@ -1,0 +1,39 @@
+name = "Bless Storage & AI Analyzer"
+version = "1.0.0"
+production_host = "gold-penguin-cristine-6kloqztm.bls.dev"
+
+[deployment]
+permission = "public"
+nodes = 11
+permissions = [
+  "https://server-bless.onrender.com/",
+  "https://server-bless.onrender.com/Upload",
+  "https://server-bless.onrender.com/List",
+  "https://server-bless.onrender.com/Delete",
+  "https://server-bless.onrender.com/ListDeleted",
+  "https://server-bless.onrender.com/Analyze",
+  "https://server-bless.onrender.com/empty_recycle_bin",
+  "https://server-bless.onrender.com/Restore",
+  "https://server-bless.onrender.com/audio/GenerateAudio",
+  "https://api.elevenlabs.io/v1/text-to-speech/sk_9623817096ade3146959c5fa0986c244f012a38c939fcf4b"
+]
+
+[build]
+dir = "build"
+entry = "template_name_debug.wasm"
+command = "npm run build:debug"
+
+[build_release]
+dir = "build"
+entry = "template_name.wasm"
+command = "npm run build:release"
+
+[[deployments]]
+name = "blessnet"
+description = ""
+cid = "bafybeibz6ahno2quqpo537wxgzb7tmbckgfoojstltn65gl3qfw4ysuana"
+created = "2025-06-01T07:19:54.032Z"
+
+  [deployments.runtime]
+  url = "blessnet.tar.gz"
+  checksum = "3e7ae41c8b7d714453168b39a9c2be5bf8090c33915fdbbac4dd6e4562c668e4"

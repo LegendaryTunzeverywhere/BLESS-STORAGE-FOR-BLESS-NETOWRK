@@ -1,0 +1,12 @@
+.temp/
+dist/
+node_modules/
+*-lock.json
+build/
+tsbuildinfo
+*tsbuildinfo*
+bless-deploy.key
+/target
+.toml
+bls.assets.json
+debug.log
